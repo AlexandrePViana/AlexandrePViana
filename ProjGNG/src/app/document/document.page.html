@@ -1,0 +1,218 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar no-padding>
+    <ion-button
+      class="navigation"
+      [disabled]="!(this.item.nome.length>0 && this.step ==0) && 
+      !(this.step ==1 && this.item.idCategoria.length>0 && this.item.idFormaPagamento.length>0
+      && this.item.idFormaReembolso.length>0)"
+      (click)="nextStep()"
+      *ngIf="this.step == 0 || (this.step == 1) || !this.step == 2"
+    >
+      <ion-label class="navigation-label"
+        >Seguinte</ion-label
+      >
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-button>
+    <ion-button
+      class="navigation"
+      (click)="save()"
+      *ngIf="this.step == 2 || (this.step == 1)"
+    >
+      <ion-label class="navigation-label">Gravar</ion-label>
+      <ion-icon name="save-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content justify-content-center>
+  <ion-fab
+    vertical="bottom"
+    horizontal="center"
+    slot="fixed"
+    *ngIf="this.step == 0"
+  >
+    <ion-fab-button (click)="imageOptions()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <form #form="ngForm" (ngSubmit)="login(form)">
+    <ion-grid>
+      <ion-row color="primary" *ngIf="this.step == 0">
+        <h3 class="titleHeader">Adicionar Documento</h3>
+        <ion-item>
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input
+            clearInput
+            placeholder="Insira o nome"
+            [(ngModel)]="item.nome"
+            [ngModelOptions]="{standalone: true}"
+          ></ion-input>
+        </ion-item>
+        <div
+          class="imageToUpload"
+          *ngFor="let image of this.item.imagens; let i = index"
+        >
+          <span>Documento {{i+1}}</span>
+          <div class="removeImage" (click)="removeImage(i)">
+            <ion-icon name="trash-outline"></ion-icon>
+          </div>
+          <img
+            *ngIf="this.item.imagens.length>0"
+            [src]="image"
+            class="imagePreview"
+          />
+        </div>
+        <!--<div
+          *ngIf="this.item.imagens.length<1"
+          style="background-image: url('assets/images/no-image.jpg');"
+          class="noImage"
+        ></div>
+         <ion-button
+            *ngIf="!imagemToUpload"
+            expand="block"
+            class="addImgButton"
+            (click)="imageOptions()"
+          >
+            <ion-icon name="add" slot="start"></ion-icon>
+            <ion-label>Adicionar</ion-label>
+          </ion-button>
+
+          <ion-button
+            *ngIf="imagemToUpload"
+            color="danger"
+            expand="block"
+            class="optionsButton"
+            (click)="removeImage()"
+          >
+            <ion-icon name="trash" slot="start"></ion-icon>
+            <ion-label>Remover</ion-label>
+          </ion-button> -->
+      </ion-row>
+      <ion-row color="primary" *ngIf="this.step == 1">
+        <ion-col align-self-center size-md="6" size-lg="6" size-xs="12">
+          <ion-item>
+            <ion-label position="floating">Grupo</ion-label>
+            <ion-select
+              [compareWith]="compareWith"
+              [(ngModel)]="item.idGrupo"
+              [ngModelOptions]="{standalone: true}"
+            >
+              <ion-select-option ng *ngFor="let grupo of grupos"
+                >{{grupo.nome}}</ion-select-option
+              >
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Data</ion-label>
+            <ion-datetime
+              displayFormat="DD/MM/YYYY"
+              [(ngModel)]="item.data"
+              [ngModelOptions]="{standalone: true}"
+            >
+            </ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Orçamento</ion-label>
+            <ion-select
+              [compareWith]="compareWith"
+              [disabled]="!item.idGrupo"
+              [(ngModel)]="item.idOrcamento"
+              [ngModelOptions]="{standalone: true}"
+            >
+              <ion-select-option *ngFor="let orcamento of orcamentos"
+                >{{orcamento.title}}</ion-select-option
+              >
+            </ion-select>
+          </ion-item>
+          <ion-item *ngIf="item.idOrcamento">
+            <ion-label position="floating">Categoria</ion-label>
+            <ion-select
+              [compareWith]="compareWith"
+              [disabled]="!item.idGrupo"
+              [(ngModel)]="item.idCategoria"
+              [ngModelOptions]="{standalone: true}"
+            >
+              <ion-select-option *ngFor="let categoria of categorias"
+                >{{categoria.nome}}</ion-select-option
+              >
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Forma Pagamento</ion-label>
+            <ion-select
+              [compareWith]="compareWith"
+              [disabled]="!item.idGrupo"
+              [(ngModel)]="item.idFormaPagamento"
+              [ngModelOptions]="{standalone: true}"
+            >
+              <ion-select-option *ngFor="let formaPagamento of formaPagamentos"
+                >{{formaPagamento.title}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Forma Reembolso</ion-label>
+            <ion-select
+              [compareWith]="compareWith"
+              [disabled]="!item.idGrupo"
+              [(ngModel)]="item.idFormaReembolso"
+              [ngModelOptions]="{standalone: true}"
+            >
+              <ion-select-option *ngFor="let formaReembolso of formaReembolsos"
+                >{{formaReembolso.title}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="floating">Pagamento Antecipado</ion-label>
+            <ion-select
+              [compareWith]="compareWith"
+              [disabled]="!item.idGrupo"
+              [(ngModel)]="item.idPagtoAntecipado"
+              [ngModelOptions]="{standalone: true}"
+            >
+              <ion-select-option
+                *ngFor="let pagtoAntecipado of pagtoAntecipados"
+                >{{pagtoAntecipado.title}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row color="primary" *ngIf="this.step == 2">
+        <h4>Centro de Custo</h4>
+        <ion-list>
+          <ion-item *ngFor="let entry of ccustoUser; let i = index">
+            <ion-label>{{entry.title}}<span *ngIf="entry.peso>0"> - Peso: {{entry.peso}}</span></ion-label>
+            <ion-checkbox
+              slot="start"
+              [(ngModel)]="entry.isChecked"
+              [ngModelOptions]="{standalone: true}"
+              (click)="setCCInfo(i, false, 0, true)"
+            ></ion-checkbox>
+          </ion-item>
+        </ion-list>
+        <div>
+          <span (click)="openCC()">Outro Centro Custo</span>
+          <ion-icon name="arrow-up" *ngIf="this.outroCC" ></ion-icon>
+          <ion-icon name="arrow-down" *ngIf="!this.outroCC"></ion-icon>
+        </div>
+        <div class="otherCC" *ngIf="this.outroCC">
+          <ion-list>
+            <ion-item *ngFor="let item of ccustoOther; let i = index">
+              <ion-label>{{item.title}}<span *ngIf="item.peso>0"> - Peso: {{item.peso}}</span></ion-label>
+              <ion-checkbox
+                slot="start"
+                [(ngModel)]="item.isChecked"
+                [ngModelOptions]="{standalone: true}"
+                (click)="setCCInfo(i, false, 0, false)"
+              ></ion-checkbox>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

@@ -1,0 +1,27 @@
+ion-label {
+    margin-left:15px;
+}
+
+ion-label h3 {
+    font-size: 16px;
+}
+
+ion-content {
+    --background: var(--ion-color-background);
+}
+
+ion-fab-button {
+    --background: var( --ion-color-button-text);
+    --color: var(--ion-color-background);
+}
+
+ion-select, ion-input, ion-datetime {
+    color:var(--ion-color-text);
+}
+
+ion-item{
+    --inner-padding-end: 10px;
+    --inner-padding-start: 10px;
+    --padding-start: 0px;
+    width: 100%;
+}

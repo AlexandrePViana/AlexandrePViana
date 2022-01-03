@@ -1,0 +1,14 @@
+{
+  "name": "Despesas Colaborador",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "proxies": [
+    {
+      "path": "/",
+      "proxyUrl": "https://fs.bwd.local/",
+      "rejectUnauthorized": false
+    }
+  ]
+}

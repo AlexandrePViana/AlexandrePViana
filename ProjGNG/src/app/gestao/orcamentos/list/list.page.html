@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Orçamento</ion-title>
+    <ion-button 
+      slot="end"
+      [disabled]="item.valor == 0 || item.title.length == 0 || item.empresa.length == 0">
+      <span (click)="saveData()">
+        <ion-icon color="primary" name="save" class="addButton"></ion-icon>
+      </span>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <form #form="ngForm" (ngSubmit)="login(form)">
+
+    <ion-item>
+      <ion-label position="floating">Assunto</ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="item.title"
+        [ngModelOptions]="{standalone: true}"
+        class="form-control"
+        [disabled]="item.estado == 'T_APROV'"
+        required>
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Valor</ion-label>
+      <ion-input
+        type="number"
+        [(ngModel)]="item.valor"
+        ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" 
+        [ngModelOptions]="{standalone: true}"
+        class="form-control"
+        [disabled]="item.estado == 'T_APROV'"
+        value="item.valor"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Empresa</ion-label>
+      <ion-select
+        [(ngModel)]="item.empresa"
+        [ngModelOptions]="{standalone: true}">
+        <ion-select-option *ngFor="let cc of empresas"
+          >{{cc.nome}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descrição</ion-label>
+      <ion-textarea type="text" [(ngModel)]="item.descricao"
+      [ngModelOptions]="{standalone: true}"
+      class="form-control"
+      [disabled]="item.estado == 'T_APROV'"
+      required placeholder="Introduzir Descrição..."></ion-textarea>
+    </ion-item>
+    <ion-button *ngIf="newMode=='false'" class="delButton" (click)="delItem(false)" size="full">Apagar</ion-button>
+  </form>
+</ion-content>

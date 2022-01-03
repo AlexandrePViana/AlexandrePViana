@@ -1,0 +1,86 @@
+.yellow {
+    fill: yellow;
+    color: yellow;
+    border: transparent;
+}
+
+.green {
+    fill: green;
+    color: green;
+    border: transparent;
+}
+
+.red {
+    fill: red;
+    color: red;
+    border: transparent;
+}
+
+ion-title {
+    color: var(--ion-color-text);
+}
+
+ion-label {
+    margin-left: 15px;
+    color: black !important;
+}
+
+ion-label h3 {
+    font-size: 16px;
+}
+
+ion-content {
+    --background: var(--ion-color-background);
+}
+
+ion-fab-button {
+    --background: var( --ion-color-button-text);
+    --color: var(--ion-color-background);
+}
+
+ion-select,
+ion-input,
+ion-datetime {
+    color: var(--ion-color-text);
+}
+
+ion-item {
+    --inner-padding-end: 10px;
+    --inner-padding-start: 10px;
+    --padding-start: 0px;
+    width: 100%;
+}
+
+ion-back-button {
+    color: var(--ion-color-button-text);
+}
+
+.addButton {
+    color: var(--ion-color-button-text);
+    font-size: 30px;
+}
+
+.HeaderTitle {
+    text-align: center !important;
+}
+
+ion-icon {
+    float: right !important;
+}
+
+.shadow-round {
+    height: 90px;
+    width: 90%;
+    display: block;
+    --border-radius: 20px;
+    text-align: left;
+}
+
+.ButtonDiv {
+    padding-top: 30px;
+}
+
+span.ion-text-left {
+    margin-right: auto;
+    font-size: 20px;
+}

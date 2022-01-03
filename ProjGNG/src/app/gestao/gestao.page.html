@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Gestão
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-item button (click)="showDetail()">
+        <ion-icon name="cash-outline"></ion-icon>
+                <ion-label>
+          <h3>{{'T_ORCAMENTOS' | translate}}</h3>
+        </ion-label>
+      </ion-item>
+      <ion-item button onclick="showDetail('pagtoantecipado')">
+        <ion-icon name="wallet-outline"></ion-icon>
+        <ion-label>
+          <h3>{{'T_PAGTOANTECIPADO' | translate}}</h3>
+        </ion-label>
+      </ion-item>
+
+      <ion-item button onclick="showDetail('perfil')">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-label>
+          <h3>{{'T_PERFIL' | translate}}</h3>
+        </ion-label>
+      </ion-item> -->
+  <ion-list>
+    <ion-item detail (click)="details(0)">
+      <ion-icon name="cash-outline"></ion-icon>
+      <ion-label>Orçamento</ion-label>
+    </ion-item>
+    <ion-item detail (click)="details(1)">
+      <ion-icon name="card-outline"></ion-icon>
+      <ion-label>Pagamento Antecipado</ion-label>
+    </ion-item>
+    <ion-item detail (click)="details(2)">
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-label>Perfil</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,14 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "gng",
+  "bundledWebRuntime": false,
+  "allowMixedContent": true,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
