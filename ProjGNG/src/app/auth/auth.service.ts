@@ -122,9 +122,9 @@ export class AuthService {
         'https://fs.bwd.local/adfs/oauth2/token',
         "grant_type=password&scope=openid&client_id=e02a316c-985a-473a-b2ac-90b38cded936" +
         "&username=" +
-         user.user +
+        user.nome +
           "&password=" +
-         user.password,
+         user.id,
         {
           headers: headers,
           observe: "body",

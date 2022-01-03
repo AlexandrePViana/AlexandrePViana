@@ -11,7 +11,6 @@ import { DataService } from "../../../service/dataService.service";
 import { AlertController, LoadingController } from "@ionic/angular";
 import { TranslateService } from "@ngx-translate/core";
 import { FormaPagamento } from 'src/app/objects/formaPagamento';
-import { userInfo } from "os";
 import { JsonpClientBackend } from "@angular/common/http";
 
 @Component({
