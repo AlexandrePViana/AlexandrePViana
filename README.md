@@ -66,6 +66,15 @@ I’m a versatile and motivated developer passionate about crafting solutions th
 📧 alexandrepv@outlook.pt
 
 ---
+# 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api?username=alexandrepviana&theme=tokyonight&hide_border=true&include_all_commits=false&count_private=true)<br/>
+![](https://github-readme-streak-stats.herokuapp.com/?user=alexandrepviana&theme=tokyonight&hide_border=true)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=alexandrepviana&theme=tokyonight&hide_border=true&include_all_commits=false&count_private=true&layout=compact)
+
+## 🏆 GitHub Trophies
+![](https://github-profile-trophy.vercel.app/?username=alexandrepviana&theme=tokyonight&no-frame=true&no-bg=false&margin-w=4)
+
+---
 
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=alexandreviana&style=flat-square&color=blue" alt="Profile views"/>
