@@ -36,22 +36,6 @@ I’m a versatile and motivated developer passionate about crafting solutions th
 
 ---
 
-### 🏢 Experience Highlights
-
-**🛠️ Full-Stack Engineer @ Bosch, Alten (2024 - Present)**  
-.NET MAUI | Microservices | Azure | CI/CD
-
-**💼 Back-End Engineer @ Polarising (2023 - 2024)**  
-System Integration | Project Refactoring | Azure DevOps
-
-**🚀 Full-Stack Developer @ BWD (2021 - 2023)**  
-Blazor | Microsoft Power Platform | JavaScript | Hybrid Apps
-
-**👨‍🏫 High School Teacher @ Porto Multimedia Institute (2024 - Present)**  
-Mentoring and teaching Information Systems
-
----
-
 ### 🎓 Education
 
 🎓 Bachelor's in Web & Multimedia Tech @ IPMAIA (2022 – Present)  
