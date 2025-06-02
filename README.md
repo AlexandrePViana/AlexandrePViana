@@ -55,7 +55,7 @@ I’m a versatile and motivated developer passionate about crafting solutions th
 - 💡 Problem Solver | 🧩 Quick Learner | 🤝 Team Player  
 - 🧰 Microservices & Monolithic Architectures  
 - 🌐 System Integration & Automation  
-- 📈 CI/CD Pipelines & Project Refactoring  
+- 📈 CI/CD Pipelines & Project Refactoring 
 - 📲 Hybrid Mobile Development with MAUI & IONIC  
 - ⚙️ Microsoft Power Platform & Workflow Automation
 
@@ -71,10 +71,14 @@ I’m a versatile and motivated developer passionate about crafting solutions th
 
 ### 📜 Certifications
 
-- Azure Fundamentals AZ-900  
-- GDPR for Attentive Citizens  
-- Cyber Safe Citizen  
-- Security of Classified Information
+- C# Basic @HackerRank
+- Foundational C# @freeCodeCamp
+- SQL Advanced @HackerRank
+- ASP.NET - Consuming APIs @Microsoft
+- Azure Fundamentals AZ-900 @Microsoft
+- GDPR for Attentive Citizens @NAU
+- Cyber Safe Citizen @NAU
+- Security of Classified Information @NAU
 
 ---
 
