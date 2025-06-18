@@ -91,7 +91,7 @@ I’m a versatile and motivated developer passionate about crafting solutions th
 
 ### 🔗 Connect with Me
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/YOUR-USERNAME-HERE)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/alexandrepviana)  
 📧 alexandrepv@outlook.pt
 
 ---
